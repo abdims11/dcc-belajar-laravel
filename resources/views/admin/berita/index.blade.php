@@ -12,7 +12,7 @@
       <div class="card">
         <div class="card-header">
           <h3 class="card-title">Data {{ $title }}</h3>
-          <a href="{{ route('berita.create') }}" class="btn btn-success float-right"><i class="fa fa-plus-square" aria-hidden="true">  Tambah</i></a>
+          <a href="{{ route('berita.create') }}" class="btn btn-success btn-sm float-right"><i class="far fa-plus-square" aria-hidden="true">  Tambah Data</i></a>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
