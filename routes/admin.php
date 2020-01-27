@@ -2,7 +2,7 @@
 
 
 
-Route::group(['prefix'=>'admin','middleware' => ['auth']], function() {
+Route::group(['prefix'=>'admin','middleware' => ['auth','admin']], function() {
 
 	Route::get('/', 'Admin\DashboardController@index')->name('admin');
 	Route::get('/userv', 'Admin\DashboardController@user')->name('userv');

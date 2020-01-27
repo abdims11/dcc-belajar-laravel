@@ -14,6 +14,17 @@
         }).then(function (result) {
             if (result.value) {
                 $form.submit();
+                Swal.fire('Dihapus!', 'Berita Berhasil Dihapus', 'success')
+            }
+            else if (
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                swal.fire(
+                'Dibatalkan',
+                'Berita Batal Dihapus!',
+                'error'
+                )
             }
         })
     });

@@ -25,8 +25,8 @@ class UserController extends Controller
     public function create()
     {
         $title = $this->title = 'User';
-
-        return view('admin.'.$title.'.tambah', compact('title'));
+        $data = User::all();
+        return view('admin.'.$title.'.tambah', compact('title', 'data'));
     }
 
     public function store(Request $request)

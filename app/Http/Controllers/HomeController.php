@@ -21,10 +21,19 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index($request)
     {
-        return redirect('/');
+        if (auth()->check() and $request->user()->level == 1) {
+            return redirect('/admin');
+        } elseif (auth()->check() and $request->user()->level == 2) {
+            return redirect('/admin');
+        } elseif (auth()->check() and $request->user()->level == 3) {
+            return redirect('/apps');
+        } else {
+           return "Halaman tidak Ditemikan";
+        }
     }
+    
     public function homeApp()
     {
         return view('home');

@@ -21,6 +21,7 @@
               <tr>
                 <th>No</th>
                 <th>Nama User</th>
+                <th>Level User</th>
                 <th>Aksi</th>
               </tr>
             </thead>
@@ -29,6 +30,7 @@
               <tr>
                 <td>{{ ++$no }}</td>
                 <td>{{ $value->name }}</td>
+                <td>{{ ($value->level == 1 ? 'Super Admin' : ($value->level == 2 ? 'Admin' : 'User')) }}</td>
                 <td>
                   <form method="post" action="{{ route('user.destroy', $value->id) }}">
                   @csrf

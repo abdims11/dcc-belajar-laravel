@@ -16,7 +16,7 @@
 			@csrf
 				@include('admin.berita.form')
 
-				<div class="card-footer float-right co-sm-12">
+				<div class="card-footer">
 					<a href="{{ route('berita.index') }}" class="btn btn-danger btn-lg">Cancel</a>
 					<button type="submit" class="btn btn-success btn-lg" title="save">Save</button>
 				</div>

@@ -15,8 +15,12 @@
 				<input type="hidden" class="form-control" name="password_skr" value="{{ isset($data->password) ? $data->password : null }}">
 			</div>
 			<div class="form-group">
-				<label>Konfirmasi Password</label>
-				<input type="password" class="form-control" value="" autocomplete="new-password">
+				<label>Level User</label>
+				<select class="form-control select2bs4" name="level" style="width: 100%;">
+					<option value="1" {{ (isset($v->level) && $v->level == 1 ? 'selected' : null) }}>Super Admin</option>
+					<option value="2" {{ (isset($v->level) && $v->level == 2 ? 'selected' : null) }}>Admin</option>
+					<option value="3" {{ (isset($v->level) && $v->level == 3 ? 'selected' : null) }}>User</option>
+				</select>
 			</div>
 		</div>
 	</div>

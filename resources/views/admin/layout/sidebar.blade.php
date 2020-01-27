@@ -21,8 +21,8 @@
     <!-- Sidebar Menu -->
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-        <li class="nav-item has-treeview menu-open">
-          <a href="{{ url('/admin') }}" class="nav-link active">
+        <li class="nav-item has-treeview">
+          <a href="{{ url('/admin') }}" class="nav-link {{ Request::is('admin') ? 'active' : ''}}">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Dashboard
@@ -30,8 +30,8 @@
           </a>
         </li>
         <li class="nav-header">MAIN</li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+          <li class="nav-item has-treeview {{ Request::is('admin/berita','admin/kategori','admin/user') ? 'menu-open' : ''}}">
+            <a href="#" class="nav-link {{ Request::is('admin/berita','admin/kategori','admin/user') ? 'active' : ''}}">
               <i class="nav-icon fas fa-cog"></i>
               <p>
                 MASTER
@@ -40,19 +40,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ url('admin/berita') }}" class="nav-link">
+                <a href="{{ url('admin/berita') }}" class="nav-link {{ Request::is('admin/berita') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Berita</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ url('admin/kategori') }}" class="nav-link">
+                <a href="{{ url('admin/kategori') }}" class="nav-link {{ Request::is('admin/kategori') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Kategori</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ url('admin/user') }}" class="nav-link">
+                <a href="{{ url('admin/user') }}" class="nav-link {{ Request::is('admin/user') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>User</p>
                 </a>
