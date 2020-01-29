@@ -21,7 +21,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index($request)
+    public function index(Request $request)
     {
         if (auth()->check() and $request->user()->level == 1) {
             return redirect('/admin');
@@ -32,6 +32,9 @@ class HomeController extends Controller
         } else {
            return "Halaman tidak Ditemikan";
         }
+
+        
+
     }
     
     public function homeApp()

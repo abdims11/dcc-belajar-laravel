@@ -33,7 +33,20 @@
             	<textarea class="form-control" rows="3" name="isi">{{ isset($data->isi) ? $data->isi : null }}</textarea>
           	</div>
         </div>
-    </div>
+	</div>
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="form-group">
+				<label for="exampleInputFile">File input</label>
+				<div class="input-group">
+				  	<div class="custom-file">
+						<input type="file" name="foto" class="custom-file-input" id="foto">
+						<label class="custom-file-label" for="foto">{{ isset($data->foto) ? $data->foto : 'Chose File'}}</label>
+					  </div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- /.row -->
 </div>
 <!-- /.card-body -->

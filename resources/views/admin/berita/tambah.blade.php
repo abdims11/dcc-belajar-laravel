@@ -12,7 +12,7 @@
 			</div>
 			<!-- /.card-header -->
 
-			<form action="{{ route('berita.store')}}" method="post" role="form">
+			<form action="{{ route('berita.store')}}" method="post" role="form" enctype="multipart/form-data">
 			@csrf
 				@include('admin.berita.form')
 

@@ -12,11 +12,12 @@
 			</div>
 			<!-- /.card-header -->
 
-			<form action="{{ route('berita.update', $data->id)}}" method="post">
+			<form action="{{ route('berita.update', $data->id)}}" method="post" enctype="multipart/form-data">
 			@csrf
 
                 <input type="hidden" name="_method" value="PATCH">
                 <input type="hidden" name="id" value="{{ $data->id }}">
+                <input type="hidden" name="foto_lama" value="{{ $data->foto}}">
 				@include('admin.berita.form')
 
 				<div class="card-footer">

@@ -1,7 +1,6 @@
 <?php
 
 
-
 Route::group(['prefix'=>'admin','middleware' => ['auth','admin']], function() {
 
 	Route::get('/', 'Admin\DashboardController@index')->name('admin');

@@ -19,6 +19,7 @@ class CreateBeritasTable extends Migration
             $table->integer('kategori_id');
             $table->string('deskripsi');
             $table->text('isi');
+            $table->string('foto');
             $table->integer('user_id');
             $table->timestamps();
         });

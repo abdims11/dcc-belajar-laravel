@@ -20,6 +20,7 @@
             <thead>
               <tr>
                 <th>No</th>
+                <th>Gamabar</th>
                 <th>Judul</th>
                 <th>Kategori</th>
                 <th>Deskripsi</th>
@@ -31,7 +32,9 @@
             <tbody>
             <?php foreach ($data as $no => $value): ?>
               <tr>
+                
                 <td>{{ ++$no }}</td>
+                <td class="text-center"><img src="{{ asset('public/gambar/'.$value->foto) }}" alt="" width="50px"></td>
                 <td>{{ $value->judul }}</td>
                 <td>{{ $value->kategori->categori }}</td>
                 <td>{{ $value->deskripsi }}</td>

@@ -18,6 +18,6 @@ class Apps
         if (auth()->check() and $request->user()->level == 3) {
             return $next($request);
         }
-        return redirect('/apps');
+        return redirect()->guest('/');
     }
 }

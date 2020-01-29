@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\Berita;
 use Alert;
+use Str;
+use Storage;
 
 class BeritaController extends Controller
 {
@@ -33,6 +35,11 @@ class BeritaController extends Controller
     {
         $model = $request->all();
         $model['user_id'] = auth()->user()->id; 
+        $file = isset($model['foto']) ? $model['foto'] : null;
+        //dd($files);
+        $model['foto'] = uploadFile($file, 'public/gambar', null);
+        
+
 
         if ($data = Berita::create($model)) {
             Alert::toast('Berita Berhasil Ditambahkan', 'success');
@@ -61,7 +68,9 @@ class BeritaController extends Controller
         $model = $request->all();
         $model['user_id'] = auth()->user()->id; 
         $data = Berita::find($model['id']);
-
+        $file = isset($model['foto']) ? $model['foto'] : null;
+        $model['foto'] = uploadFile($file, 'public/gambar', $model['foto_lama']);
+       
         if ($data->update($model)) {
             Alert::toast('Berita Berhasil Diupdate', 'success');
         } else {
@@ -75,7 +84,10 @@ class BeritaController extends Controller
     public function destroy($id)
     {
         $data = Berita::find($id);
-        $data->delete();
+        if($data->delete()){
+            Storage::delete('public/gambar'. '/' . $data->foto);
+        }
+
         return redirect('admin/berita');
     }
 }

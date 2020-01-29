@@ -34,7 +34,7 @@
             <a href="#" class="nav-link {{ Request::is('admin/berita','admin/kategori','admin/user') ? 'active' : ''}}">
               <i class="nav-icon fas fa-cog"></i>
               <p>
-                MASTER
+                DATA MASTER
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>

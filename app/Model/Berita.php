@@ -12,6 +12,7 @@ class Berita extends Model
         'kategori_id',
         'deskripsi', 
         'isi',
+        'foto',
         'user_id'
     ];
 

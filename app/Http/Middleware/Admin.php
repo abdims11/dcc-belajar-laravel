@@ -18,6 +18,6 @@ class Admin
         if (auth()->check() and $request->user()->level == 1 or $request->user()->level == 2) {
             return $next($request);
         }
-        return redirect('/admin');
+        return redirect()->guest('login');
     }
 }
