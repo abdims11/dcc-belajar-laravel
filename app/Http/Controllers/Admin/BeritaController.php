@@ -16,11 +16,15 @@ class BeritaController extends Controller
         $this->title = 'Berita';
     }
     
-    public function index()
+    public function index(Request $request)
     {
         $title = $this->title = 'Berita';
-        $data = Berita::all();
-        
+        $data = Berita::when($request->keyword, function($query) use ($request){
+            $query
+                ->where('judul', 'like', "%{$request->keyword}%");
+        })->paginate(10);
+        $data->appends($request->only('keyword'));
+
         return view('admin.'.$title.'.index', compact('data', 'title'));
     }
 

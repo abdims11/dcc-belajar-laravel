@@ -30,8 +30,8 @@
     <li class="nav-item dropdown">
       <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
         <!-- Right Side Of Navbar -->
-        <ul class="navbar-nav ml-auto user-panel">
-          <img src="{{ asset('AdminLTE/dist/img/abdi.jpg') }}" class="img-circle elevation-2" alt="User Image">
+        <ul class="navbar-nav ml-auto user-panel image">
+           <!-- <img src="{{ asset('AdminLTE/dist/img/abdi.jpg') }}" class="img-circle elevation-2" alt="User Image"> -->
         </ul>
         <!-- Right Side Of Navbar -->
         <ul class="navbar-nav ml-auto">
