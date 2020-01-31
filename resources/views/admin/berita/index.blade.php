@@ -12,22 +12,23 @@
       <div class="card">
         <div class="card-header">
           <h3 class="card-title">Data {{ $title }}</h3>
+          <div class="col-sm-12">
+            <a href="{{ route('berita.create') }}" class="btn btn-success btn-sm float-right"><i class="far fa-plus-square" aria-hidden="true">  Tambah Data</i></a>
+          </div>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
           <div class="row">
             <div class="col-sm-4">
-              <div class="form-group">
-                <form action="{{ url()->current() }}">  
+              <form action="{{ url()->current() }}">  
+                <div class="input-group-append">
                   <input type="text" name="keyword" class="form-control" placeholder="Search for..."/>
-                  <button class="btn btn-primary float-left" type="submit"><i class="fa fa-search"></i></button>
-                </form>
-              </div>
-            </div>
-            <div class="col-sm-8">
-              <a href="{{ route('berita.create') }}" class="btn btn-success btn-sm float-right"><i class="far fa-plus-square" aria-hidden="true">  Tambah Data</i></a>
+                  <button class="input-group-text btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
+                </div>
+              </form>
             </div>
           </div>
+          <br>
           <table id="sebarang" class="table table-bordered table-striped">
             <thead>
               <tr>
