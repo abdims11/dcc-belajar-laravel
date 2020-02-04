@@ -19,7 +19,7 @@ class BeritaController extends Controller
     public function index(Request $request)
     {
         $title = $this->title = 'Berita';
-        $data = Berita::when($request->keyword, function($query) use ($request){
+        $data = Berita::orderBy('id', 'desc')->when($request->keyword, function($query) use ($request){
             $query
                 ->where('judul', 'like', "%{$request->keyword}%");
         })->paginate(10);

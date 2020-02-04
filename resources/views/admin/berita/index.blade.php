@@ -47,7 +47,7 @@
                 <tr>
 
                   <td>{{ ++$no }}</td>
-                  <td class="text-center"><img src="{{ asset('public/gambar/'.$value->foto) }}" alt="" width="50px"></td>
+                  <td class="text-center"><img src="{{ asset('public/storage/gambar/'.$value->foto) }}" alt="" width="80px"></td>
                   <td>{{ $value->judul }}</td>
                   <td>{{ $value->kategori->categori }}</td>
                   <td>{{ $value->deskripsi }}</td>
@@ -71,10 +71,9 @@
         <!-- /.card-body -->
         <nav aria-label="Page navigation example">
           <ul class="pagination justify-content-center">
-            {{ $data->render() }}
-          </li>
-        </ul>
-      </nav>
+            {{ $data->links() }}
+          </ul>
+        </nav>
       <!-- / .card-footer -->
     </div>
     <!-- /.card -->
